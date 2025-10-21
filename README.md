@@ -16,3 +16,6 @@ With Pick-A-Name, you can:
 We are participants at Roads Technology, where we are learning to code. After rigorous study, we felt ready for a challenge, and to begin our first collaborative project.
 One of the counselors was expecting his first child and mentioned his wish for an easier and better way to search for names and compare them with his partner.
 This caught our attention and sparked our imagination. Why wasn’t something like this more widely available? So, we got to work.
+
+## Important notice
+If you want to test the front-end website locally ALSO run the API locally. Otherwise the cookie wont work.
