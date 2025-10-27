@@ -5,7 +5,7 @@ body {
     background: linear-gradient(45deg, var(--gradient1), var(--gradient2));
     background-size: 200% 200%;
     /* Ensures the gradient shifts */
-    animation: pulseGradient 5s infinite;
+    animation: pulseGradient 20s infinite;
     /* Duration and infinite loop */
 }
 

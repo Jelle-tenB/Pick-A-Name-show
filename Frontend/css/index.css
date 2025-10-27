@@ -19,7 +19,6 @@
     --color8 : #55cf5f ;
     --color9 : #dc3e88 ;
 
-    /* todo changing font does nothing */
     --smallText: 'Arial', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-family: var(--smallText);
     /* --smallText: 'Open Sans'; */

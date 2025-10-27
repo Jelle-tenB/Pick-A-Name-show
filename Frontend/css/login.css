@@ -27,3 +27,11 @@
     align-items: center;
     gap : 10px;
 }
+
+#loginUser {
+    font-size: 20px;
+}
+
+#loginPass {
+    font-size: 20px;
+}
