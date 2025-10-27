@@ -13,7 +13,7 @@ The frontend for the website/app is currently being a build by someone else. Whe
 ## Instructions
 
 * Fork this repository
-* Install the requirements (pip install -r Backend/requirements.txt)
+* Install the requirements (pip install -r requirements.txt)
 * Run main.py
 * Go to <http://127.0.0.1:5000/docs>
   * Here you can find the API documentation and try it.
@@ -28,3 +28,4 @@ You can reach me at: <jellepelle213@hotmail.com>
 
 You can use my code in any shape or form that you like, besides training AI or commercially.\
 The database is build off of a different database for which you can find the license [here](https://github.com/MatthiasWinkelmann/firstname-database)
+
