@@ -11,6 +11,7 @@ async function deleteAccount(){
     if (confirm){
         //send the delete account
         const response = await apiCaller.deleteAccount()
+        window.assign('../html/welcome.html')
     }
     else{
         //give are u sure check

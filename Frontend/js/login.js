@@ -17,9 +17,11 @@ try {
         }
     }
 } catch (error) {
-    console.error(error)
+    console.error(error);
 }
 //TODO: if cookielogin is successful redirect
+// Als succesLogin() wordt aangeroepen, wordt de gebruiker doorgestuurd naar de laatste pagina of de filterpagina.
+// Dus is deze TODO al gedaan, toch?
 
 //add this function to the login button
 document.querySelector('#loginbutton').addEventListener('click', () => logIn());
@@ -46,8 +48,7 @@ async function logIn(){
             } 
         } catch (error) {
             //something went wrong
-            console.log(error)
-            //TODO: give feedback on wrong name/ww
+            createWarn('Username or password invalid')
         }
     }
     else if(!username){

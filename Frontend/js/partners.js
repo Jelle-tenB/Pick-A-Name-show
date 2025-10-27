@@ -1,5 +1,4 @@
 //want to build it so u can swap between creating group and joining group by selecting the card
-// TODO: opmerking van Jelle; Deze pagina checked de cookie 2x.
 // In de backend wordt de session_token alleen vernieuwd als hij ouder is dan 1 uur. Hopelijk voorkomt dit problemen.
 // Er komen namelijk wel eens problemen voor met gelijktijdige requests die de cookie updaten.
 

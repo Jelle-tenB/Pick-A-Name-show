@@ -224,9 +224,10 @@ class Filter extends HTMLElement {
         window.location.assign('../html/swipen.html')
     }
 
-    clickGender(e){
+    clickGender(event){
         //TODO: put gender in localstorage and swap highlight to current clicked
-        const clicked = e.target
+        console.log(event)
+        const clicked = event.target
         const current = this.querySelector('.gendercard[selected]')
         if(clicked != current){
             //deselect current and select the new gender

@@ -71,14 +71,13 @@ class ApiCaller{
         return response
     }
 
-    //get a list of names similar to the name profided
-    async getSimilar(nameID = 123){
-        //TODO: test
+    //get a list of names similar to the name provided
+    async getSimilar(nameID){
         const response = await this.callApi(this.url+`/similar?name_id=${nameID}`)
         return response
     }
 
-    // give the like ids and dislike ids and returns a sucses response
+    // give the like ids and dislike ids and returns a success response
     async sendPreferences(liked,disliked){
         const body = {}
         //check if they have values
@@ -95,21 +94,18 @@ class ApiCaller{
     }
 
     async getDislikedList(){
-        //TODO: test
         const response = await this.callApi(this.url+'/dislike_list')
         return response
     }
 
     //returns the matches between partners
     async getGroupLiked(){
-        //TODO: test
         const response = await this.callApi(this.url+'/group_liked')
         return response
     }
 
     //returns the list of names that the partner liked but user has not 
     async PartnersLiked(group_code){
-        //TODO: test, needs input of group_code
         const response = await this.callApi(this.url+`/compare_likes?group_code=${group_code}`)
         return response
     }
@@ -126,7 +122,7 @@ class ApiCaller{
         return response;
     }
 
-    //logout and clear cooky
+    //logout and clear cookie
     async logOut(){
         const response = await this.callApi(this.url+'/logout');
         return response;
@@ -140,15 +136,12 @@ class ApiCaller{
 
     // give username new ww and recovery code to change the password to new password
     async recoverAccount(username,new_password,recovery_token){
-        //TODO: test 
         const response = await this.callApi(this.url+'/account_recovery','post',{username,new_password,recovery_token})
         return response
     }
 
     //create a new group and returns group id to send to partner to hook up
     async newGroup(){
-        //TODO: test 
-        //TODO: needs to be a get ?
         const response = await this.callApi(this.url+'/new_group','post')
         return response
     }
@@ -160,29 +153,25 @@ class ApiCaller{
     }
 
     async deleteGroup(group_code){
-        //TODO: test 
         const response = await this.callApi(this.url+`/delete_group?group_code=${group_code}`,'delete')
         return response
     }
     
     async deleteLike(name_ids = []){
-        //TODO: test
         const search = new URLSearchParams()
-        name_ids.forEach(id => search.append('id',id))
+        name_ids.forEach(id => search.append('name_ids',id))
         const response = await this.callApi(this.url+'/unlike?'+search,'delete')
         return response
     }
 
     async deleteDislike(name_ids = []){
-        //TODO:
         const search = new URLSearchParams()
-        name_ids.forEach(id => search.append('id',id))
+        name_ids.forEach(id => search.append('name_ids',id))
         const response = await this.callApi(this.url+'/undislike?'+search,'delete')
         return response
     }
 
     async deleteAccount(){
-        //TODO:
         const response = await this.callApi(this.url+'/delete_user','delete')
         return response
     }

@@ -25,8 +25,7 @@ async function getNames() {
             const names = await apicaller.getSwipeList()
             return names
         } catch (error) {
-            //TODO:
-            console.error(error)
+            createWarn('Could not get names from server, please try different settings.')
         }
     }
 }
@@ -257,7 +256,7 @@ class Carousel {
 
     }
 
-    //TODO:: is random naam picken nodig?
+    //TODO: is random naam picken nodig?
     // creates random number's until it's not the same as the last time
     randomNumber(lastNumber) {
         let randomNumber = Math.floor(Math.random() * this.array.length);
@@ -405,18 +404,14 @@ const clearAsyncInterval = (intervalIndex) => {
 if(USERLOGEDIN){
     //create interval that updates the list to api 1/min
     //interval in ms
-    // TODO: opmerking van Jelle; na het verzenden van likes/dislikes de lijsten clearen.
     const interval = 60000
      setAsyncInterval(async () => {
         if(carousel.likeIDs.length > 0 || carousel.DisLikeIDs.length > 0){
             try {
                 const response = await apicaller.sendPreferences(carousel.likeIDs,carousel.DisLikeIDs)
-                console.log(response)
-                if(response.Success) carousel.clearLikes()
-                console.log(carousel.likeIDs, carousel.DisLikeIDs)
+                if(response.success) carousel.clearLikes()
             } catch (error) {
-                //TODO:
-                console.log(error)
+                createWarn('Could not add (dis)liked names to server.')
             }
         }
         else{
