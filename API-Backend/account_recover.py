@@ -31,7 +31,16 @@ class Item(BaseModel):
         str, field(description="new password to replace the old one.")]
 
 
-@account_recover_router.post("/account_recovery",)
+@account_recover_router.post("/account_recovery",
+    responses={
+        200:
+            {"description": "successful response",
+            "content": {
+                "application/json": {
+                    "example":
+                        {"success": "password has been updated."}
+    }}}
+})
 @limiter.limit("10/minute")
 async def recovery(
     item: Item,
@@ -69,6 +78,6 @@ async def recovery(
         except Error as e:
             raise HTTPException(status_code=500, detail="error: failed to update password") from e
 
-        return JSONResponse(status_code=200, content="success: password has been updated.")
+        return JSONResponse(status_code=200, content={"success": "password has been updated."})
 
     raise HTTPException(status_code=401, detail="error: recovery code does not match")

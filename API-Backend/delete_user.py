@@ -85,4 +85,7 @@ async def delete_user(
             await db.execute(getenv("DELETE_GROUP"), (group_id,))
         await db.commit()
 
-    return JSONResponse(status_code=200, content={"success": f"{user_name} has successfully been deleted"})
+    response = JSONResponse(status_code=200,
+                    content={"success": f"{user_name} has successfully been deleted"})
+    response.set_cookie(key="session_token", value="", max_age=0, httponly=True, samesite="lax")
+    return response

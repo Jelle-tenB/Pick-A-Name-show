@@ -93,7 +93,7 @@ class SuccessResponse(RootModel):
 
 
 class ErrorResponse(BaseModel):
-    detail: str = Field(..., examples=["error: database error"])
+    detail: str = Field(..., examples=[{"detail": "error: database error"}])
 
 
 # @asynccontextmanager
