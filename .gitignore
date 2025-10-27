@@ -1,0 +1,12 @@
+.venv/
+API-Backend/__pycache__/
+API-Backend/.pytest_cache/
+API-tester/.pytest_cache/
+API-tester/__pycache__/
+#.vscode/
+#secrets.env
+#main_secrets.env
+#scheduler_secrets.env
+#API-Backend/dbstructure.erd
+#API-Backend/.vscode/
+#API-Backend/password.py
