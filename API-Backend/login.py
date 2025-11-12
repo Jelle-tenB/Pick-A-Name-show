@@ -157,7 +157,7 @@ async def login(
                     )
 
         # Now verify the password
-        if not pwd_context.verify(item.password, hashed_pwd):
+        if pwd_context:
             last_attempt = datetime.now().replace(microsecond=0)
             # Try to update first
             result = await db.execute(getenv("UPDATE_FAILED_LOGINS"),
